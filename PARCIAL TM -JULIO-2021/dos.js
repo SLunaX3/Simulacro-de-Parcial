@@ -25,7 +25,6 @@ function mostrar()
 	var vendedor;
 	var importe;	
 	var respuesta;
-	var contadorVendedor;
 	var acumuladorImporteJuan;
 	var acumuladorImportePedro;
 	var acumuladorImporteMaria;
@@ -38,16 +37,18 @@ function mostrar()
 	var ventasJuan;
 	var ventasPedro;
 	var ventasMaria;
+	var vendedorMayorRecaudacion;
 
 	respuesta = true;
-	contadorVendedor = 0;
 	ImporteMaximo = 500000;
 	comisionExtra = 10;
 	comision = 5;
 	acumuladorImporteJuan = 0;
 	acumuladorImportePedro =0;
 	acumuladorImporteMaria =0;
-
+	ventasJuan =0;
+	ventasPedro =0;
+	ventasMaria =0;
 
 	while(respuesta == true)
 	{
@@ -59,14 +60,14 @@ function mostrar()
 
 		importe = prompt("Ingrese Importe: ");
 		importe = parseFloat(importe);
-		while(isNaN(importe)||importe>0||importe>10000)
+		while(isNaN(importe)||importe<0||importe>10000)
 		{
 			importe = prompt ("Error. Importe supera los $10000 ");
 			importe = parseFloat(importe);
 		}
 		
 		//calcular el total de la comision por vendedor
-		switch(Vendedor)
+		switch(vendedor)
 		{
 			case "Juan":
 			acumuladorImporteJuan+=importe;
@@ -132,10 +133,10 @@ function mostrar()
     }
 
     //a. Importe total de ventas, cantidad de ventas y comision. (Por cada vendedor)
-    document.write("Juan: importe total de ventas: $" +acumuladorImporteJuan+" . Cantidad de ventas: "+ventasJuan+". Comisión: "+comisionJuan+"<br>");
-    document.write("Pedro: importe total de ventas: $" +acumuladorImportePedro+" . Cantidad de ventas: "+ventasPedro+". Comisión: "+comisionPedro+"<br>");
-    document.write("Maria: importe total de ventas: $" +acumuladorImporteMaria+" . Cantidad de ventas: "+ventasMaria+". Comisión: "+comisionMaria+"<br>");
-    
+    document.write("JUAN: importe total de ventas: $" +acumuladorImporteJuan+" . Cantidad de ventas: "+ventasJuan+". Comisión: "+comisionJuan+"<br>");
+    document.write("PEDRO: importe total de ventas: $" +acumuladorImportePedro+" . Cantidad de ventas: "+ventasPedro+". Comisión: "+comisionPedro+"<br>");
+    document.write("MARIA: importe total de ventas: $" +acumuladorImporteMaria+" . Cantidad de ventas: "+ventasMaria+". Comisión: "+comisionMaria+"<br>");
+
     document.write(vendedorMayorRecaudacion + "<br>");
 
 }
