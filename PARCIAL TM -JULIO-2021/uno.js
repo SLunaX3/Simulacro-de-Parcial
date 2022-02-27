@@ -86,7 +86,8 @@ function mostrar()
 	document.write("El mínimo importe es: "+importeMinimo+" . Del país: "+paisImporteMinimo+ "<br>");
 	document.write("El máximo Importe es: "+importeMaximo+" . De la marca: " +marcaImporteMaximo + "<br>");
 	document.write("El Promedio de la compra es : $" + promedio + "<br>");
-	document.write("La cantidad de Productos de China es :" + contadorChina + "<br>");	
+	if(contadorChina>0)
+	{document.write("La cantidad de Productos de China es :" + contadorChina + "<br>");}	
 	document.write("Resultado del maximo importe con 10% de descuento: " + importeMaximoConDesc + "<br>");
 
 
